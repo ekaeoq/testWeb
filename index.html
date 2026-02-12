@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jedan — Viktor Watch</title>
+  <meta name="description" content="Jedan by Viktor Watch. Ultra small batch. Preorders 13 Feb, 18:00 CET. €475." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="h">
+    <div class="h__left">
+      <div class="logo">VIKTOR WATCH</div>
+      <div class="sub">micro-batch · hand-finished · no theatre</div>
+    </div>
+    <div class="h__right">
+      <a href="#buy">Buy</a>
+      <a href="#notes">Notes</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </header>
+
+  <main class="m">
+    <section class="panel">
+      <div class="panel__img">
+        <img src="DSC09955.png" alt="Jedan — Viktor Watch" />
+      </div>
+
+      <div class="panel__copy">
+        <div class="tag">MODEL</div>
+        <h1>JEDAN</h1>
+
+        <p class="p">
+          Five pieces sold out immediately.
+          The next batch is small because I can’t physically make more than that.
+        </p>
+
+        <div class="facts">
+          <div><span>Price</span><b>€475</b></div>
+          <div><span>Preorders</span><b>13 Feb · 18:00 CET</b></div>
+          <div><span>Status</span><b class="sold">SOLD OUT</b></div>
+        </div>
+
+        <div class="buy" id="buy">
+          <a class="cta" id="buyBtn" href="STRIPE_PAYMENT_LINK" target="_blank" rel="noopener noreferrer">
+            Preorder (opens soon)
+          </a>
+          <button class="cta ghost" id="notifyBtn" type="button">Get notified</button>
+        </div>
+
+        <div class="count">
+          <div class="count__l">Opens in</div>
+          <div class="count__t" id="countdown">—</div>
+        </div>
+
+        <div class="micro">
+          <p><b>Dial finishing:</b> hand-worked, grit by grit. Every line is human. Every streak is mine.</p>
+          <p><b>Reason:</b> I’m not scaling the story away. Constraint is the whole point.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes" id="notes">
+      <h2>Notes</h2>
+      <div class="cols">
+        <div class="box">
+          <h3>What this is</h3>
+          <p>
+            A first release. A real object made by one person. Built at the intersection of engineering and design.
+          </p>
+        </div>
+        <div class="box">
+          <h3>What it isn’t</h3>
+          <p>
+            Fake exclusivity. Manufactured scarcity. “Luxury storytelling” without the craft.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Updates</h3>
+          <p>
+            You’ll get progress updates during production. One batch, one queue, no noise.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Where does the buy button go?</summary>
+        <div class="d">
+          It links to a Stripe Payment Link checkout. Replace STRIPE_PAYMENT_LINK in the code with your URL.
+        </div>
+      </details>
+
+      <details>
+        <summary>Refund policy?</summary>
+        <div class="d">
+          You refund in Stripe. In many cases, Stripe fees are not returned when you issue a refund (depends on region).
+        </div>
+      </details>
+    </section>
+
+    <footer class="f">
+      <div>© <span id="year"></span> Viktor Watch</div>
+      <div class="links">
+        <a href="mailto:hello@viktor.watch">hello@viktor.watch</a>
+        <a href="#">X</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>document.getElementById("year").textContent = String(new Date().getFullYear());</script>
+</body>
+</html>
+

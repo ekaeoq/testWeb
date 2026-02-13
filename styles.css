@@ -62,7 +62,7 @@ body{
   align-items:center;
   gap: 12px;
 }
-.brand__mark{
+.brand__logo{
   width: 14px;
   height: 14px;
   border: var(--hair) solid var(--ink);

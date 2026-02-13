@@ -62,13 +62,14 @@ body{
   align-items:center;
   gap: 12px;
 }
+
 .brand__logo{
-  width: 14px;
-  height: 14px;
-  border: var(--hair) solid var(--ink);
-  transform: rotate(45deg);
-  opacity:.9;
+  width: 18px;          /* tweak size */
+  height: 18px;
+  display: block;
+  object-fit: contain;
 }
+
 .brand__name{
   font-size: 14px;
   letter-spacing: .14em;

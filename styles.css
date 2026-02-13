@@ -64,8 +64,8 @@ body{
 }
 
 .brand__logo{
-  width: 18px;          /* tweak size */
-  height: 18px;
+  width: 24px;
+  height: 24px;
   display: block;
   object-fit: contain;
 }

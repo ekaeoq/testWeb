@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Viktor Watches — Model 1</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <!-- Top site header -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <!-- Replace with your real logo image if you want -->
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true"></div>
+        <div class="brand__name">Viktor Watches</div>
+      </div>
+
+      <!-- optional top-right link area (leave empty for now) -->
+      <div class="site-header__right"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- This is now just a normal content block (not a "panel") -->
+    <section class="panel" aria-label="Product summary">
+
+      <!-- Row label -->
+      <div class="labels">
+        <div>Model 1</div>
+        <div></div>
+      </div>
+
+
+      <!-- Item block -->
+      <article class="item">
+        <!-- IMAGE-ONLY TOP -->
+        <div class="carousel" id="carousel">
+          <div class="slides" id="slides">
+            <!-- Replace these with your watch photos -->
+            <div class="slide">
+              <img src="watch1.png" alt="Watch image 1"
+                   onerror="this.src='https://dummyimage.com/1200x1200/f2f2f2/111&text=watch+1';">
+            </div>
+            <div class="slide">
+              <img src="watch2.png" alt="Watch image 2"
+                   onerror="this.src='https://dummyimage.com/1200x1200/f2f2f2/111&text=watch+2';">
+            </div>
+            <div class="slide">
+              <img src="watch4.jpeg" alt="Watch image 3"
+                   onerror="this.src='https://dummyimage.com/1200x1200/f2f2f2/111&text=watch+3';">
+            </div>
+          </div>
+
+          <!-- Minimal arrows -->
+          <button class="nav-btn left" id="prev" aria-label="Previous image">
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+          <button class="nav-btn right" id="next" aria-label="Next image">
+            <span class="chev" aria-hidden="true"></span>
+          </button>
+
+          <!-- Dots -->
+          <div class="dots" id="dots" aria-label="Image navigation"></div>
+        </div>
+
+        <!-- DETAILS BELOW IMAGE -->
+        <div class="item-top">
+          <div>
+            <div class="item-name">Jedan (Sanded Dial)</div>
+            <div class="meta-line">Quantity: <span class="mono">1</span></div>
+          </div>
+
+          <div class="right-stack">
+            <div class="item-price" id="itemPrice">€475</div>
+          </div>
+        </div>
+
+        <!-- SPECS BOX -->
+        <div class="specs" aria-label="Watch specs">
+          <div class="row">
+            <div class="k">Case</div>
+            <div class="v">316L stainless steel</div>
+          </div>
+          <div class="row">
+            <div class="k">Movement</div>
+            <div class="v">Seiko NH35 (automatic)</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Dial</div>
+            <div class="v">hand-sanded / brushed</div>
+          </div>
+          <div class="row">
+            <div class="k">Strap</div>
+            <div class="v">black leather, 20mm</div>
+          </div>
+
+          <div class="row">
+            <div class="k">Crystal</div>
+            <div class="v">sapphire</div>
+          </div>
+          <div class="row">
+            <div class="k">Color</div>
+            <div class="v">stone / graphite</div>
+          </div>
+
+          <div class="row full">
+            <div class="k">Specs</div>
+            <div class="v">38mm · 10.8mm · 50m WR</div>
+            <div class="edit">Edit</div>
+          </div>
+        </div>
+
+        <div class="rule after-item-rule"></div>
+      </article>
+
+      <!-- Totals -->
+      <section class="totals" aria-label="Totals">
+        <div class="line">
+          <div>Sub total</div>
+          <div class="val" id="subTotal">€475</div>
+        </div>
+        <div class="line">
+          <div>Shipping (estimate)</div>
+          <div class="val" id="shipping">€15</div>
+        </div>
+        <div class="line grand">
+          <div>Total</div>
+          <div class="val" id="total">€490</div>
+        </div>
+      </section>
+
+      <div class="rule"></div>
+
+      <!-- CTA -->
+      <div class="cta">
+		  <a class="btn" id="checkout" href="https://buy.stripe.com/9B67sMeVOguQ8xdakCffy00">
+			Proceed to check out
+		  </a>
+      </div>
+      
+	  <!-- Plain note text (no checkbox) -->
+      <p class="note">
+        International customs charges may apply on arrival.
+      </p>
+
+    </section>
+  </main>
+
+  <!-- Real page footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-left">© <span id="year"></span> Viktor Watches. All rights reserved.</div>
+      <div class="footer-right">Viktor — Watchmaker</div>
+    </div>
+  </footer>
+
+  <script>
+    // Carousel + totals math (quantity fixed to 1 for now).
+    (function(){
+      const slides = document.getElementById('slides');
+      const dotWrap = document.getElementById('dots');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+
+      const subTotalEl = document.getElementById('subTotal');
+      const shippingEl = document.getElementById('shipping');
+      const totalEl = document.getElementById('total');
+
+      const currency = "€";
+      const pricePer = 475;   // change
+      const shipping = 15;    // change
+      const quantity = 1;     // fixed for now
+
+      const count = slides.children.length;
+      let index = 0;
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Build dots
+      const dots = [];
+      for(let i=0;i<count;i++){
+        const b = document.createElement('button');
+        b.className = 'dot';
+        b.type = 'button';
+        b.setAttribute('aria-label', `Go to image ${i+1}`);
+        b.addEventListener('click', ()=>go(i));
+        dotWrap.appendChild(b);
+        dots.push(b);
+      }
+
+      function renderDots(){
+        dots.forEach((d,i)=> d.setAttribute('aria-current', i===index ? 'true' : 'false'));
+      }
+
+      function go(i){
+        index = (i + count) % count;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+        renderDots();
+      }
+
+      prev.addEventListener('click', ()=>go(index-1));
+      next.addEventListener('click', ()=>go(index+1));
+
+      // Optional: wheel to switch images
+      const carousel = document.getElementById('carousel');
+      carousel.addEventListener('wheel', (e)=>{
+        if(Math.abs(e.deltaY) < 2) return;
+        e.preventDefault();
+        if(e.deltaY > 0) go(index+1);
+        else go(index-1);
+      }, { passive:false });
+
+      function format(n){ return currency + n; }
+      function recalc(){
+        const sub = quantity * pricePer;
+        const tot = sub + shipping;
+        subTotalEl.textContent = format(sub);
+        shippingEl.textContent = format(shipping);
+        totalEl.textContent = format(tot);
+      }
+
+      // init
+      go(0);
+      recalc();
+    })();
+  </script>
+</body>
+</html>

@@ -39,7 +39,7 @@
       </div>
       <div class="hero__content">
         <p class="eyebrow">Workshop-built watches</p>
-        <h1>Not a factory. Not a fantasy. A workshop.</h1>
+        <h2> Not a factory. Not a fantasy. A workshop.</h2>
         <p class="hero__lede">
           Viktor Watch is built through process, iteration, and an obsession
           with making things properly. What began as one watch for sale now
@@ -384,19 +384,6 @@
       next.addEventListener("click", function () {
         go(index + 1);
       });
-
-      document.getElementById("carousel").addEventListener(
-        "wheel",
-        function (event) {
-          if (Math.abs(event.deltaY) < 2) {
-            return;
-          }
-
-          event.preventDefault();
-          go(event.deltaY > 0 ? index + 1 : index - 1);
-        },
-        { passive: false }
-      );
 
       function format(value) {
         return currency + value;

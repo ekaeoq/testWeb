@@ -408,16 +408,20 @@ h1 {
   margin-right: auto;
   border-radius: 16px;
   overflow: hidden;
-  padding-top: 88px;
-  padding-bottom: 88px;
+  padding-top: 58px;
+  padding-bottom: 58px;
   background: linear-gradient(135deg, #191919 0%, #232323 48%, #2d2d2d 100%);
 }
 
 .model-grid {
   display: grid;
   grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.28fr);
-  gap: 24px;
+  gap: 20px;
   align-items: stretch;
+}
+
+.model-section .section-heading {
+  margin-bottom: 18px;
 }
 
 .model-grid__copy {
@@ -889,8 +893,8 @@ h1 {
 
   .model-section {
     margin-top: 56px;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .story-block,

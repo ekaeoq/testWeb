@@ -818,8 +818,9 @@ h1 {
   .story-block__media,
   .model-grid__media,
   .archive-card__media {
-    min-height: 320px;
+    min-height: 0;
     height: auto;
+    aspect-ratio: 3 / 2;
   }
 
   .hero__content {
@@ -852,6 +853,7 @@ h1 {
 
   .hero {
     padding-top: 18px;
+    gap: 18px;
   }
 
   .btn {
@@ -867,6 +869,54 @@ h1 {
   .model-grid__copy,
   .intro-card {
     border-radius: 12px;
+  }
+
+  .hero__media,
+  .story-block__media,
+  .model-grid__media,
+  .archive-card__media,
+  .carousel {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .story-layout,
+  .archive-section,
+  .shop-section {
+    padding-top: 72px;
+  }
+
+  .model-section {
+    margin-top: 56px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .story-block,
+  .model-grid,
+  .archive-card {
+    gap: 18px;
+  }
+
+  .archive-card {
+    padding: 18px;
+  }
+
+  .hero__content,
+  .story-block__content,
+  .model-grid__copy,
+  .panel,
+  .intro-card {
+    padding: 20px;
+  }
+
+  .hero__lede,
+  .story-block__content p,
+  .model-grid__copy p,
+  .archive-card__body p {
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .specs,

@@ -166,13 +166,13 @@ main {
 .hero {
   padding-top: 32px;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 0.78fr);
   gap: 26px;
   align-items: stretch;
 }
 
 .hero__media {
-  height: clamp(360px, 48vw, 560px);
+  height: clamp(320px, 36vw, 460px);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -185,7 +185,7 @@ main {
 }
 
 .hero__content {
-  height: clamp(360px, 48vw, 560px);
+  height: clamp(320px, 36vw, 460px);
   align-self: stretch;
   padding: clamp(24px, 4vw, 44px);
   border: var(--hair) solid rgba(27, 24, 20, 0.12);
@@ -339,14 +339,15 @@ h1 {
 
 .story-block {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
   gap: 24px;
   align-items: stretch;
   margin-bottom: 22px;
 }
 
 .story-block__media {
-  min-height: 420px;
+  min-height: 320px;
+  height: clamp(300px, 30vw, 380px);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -409,7 +410,7 @@ h1 {
 
 .model-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.28fr);
   gap: 24px;
   align-items: center;
 }
@@ -430,7 +431,8 @@ h1 {
 }
 
 .model-grid__media {
-  min-height: 420px;
+  min-height: 320px;
+  height: clamp(300px, 30vw, 380px);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -460,14 +462,15 @@ h1 {
 
 .archive-card {
   display: grid;
-  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(320px, 1.15fr) minmax(0, 0.85fr);
   gap: 24px;
   padding: clamp(22px, 4vw, 32px);
   border-radius: 16px;
 }
 
 .archive-card__media {
-  min-height: 360px;
+  min-height: 280px;
+  height: clamp(260px, 26vw, 340px);
   border-radius: 14px;
   overflow: hidden;
 }

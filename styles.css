@@ -1025,6 +1025,10 @@ h1 {
     gap: 12px;
   }
 
+  .mailing-input {
+    width: 100%;
+  }
+
   .mailing-submit {
     width: 100%;
   }
